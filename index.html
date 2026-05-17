@@ -669,6 +669,37 @@
       font-family: var(--font-serif);
     }
 
+    /* ====== PAGINATION ====== */
+    .gallery-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.25s;
+      font-family: var(--font-sans);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .page-btn:hover, .page-btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: white;
+    }
+
+    .page-btn.arrow { font-size: 1rem; }
+
     @media (max-width: 768px) {
       .masonry-grid { columns: 2; }
       .full-gallery-section { padding: 64px 20px; }
@@ -1180,7 +1211,7 @@
       <div class="gallery-item" onclick="openLightbox('image/28.JPG','境内の風景')"><img src="image/28.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
       <div class="gallery-item" onclick="openLightbox('image/34.JPG','境内の風景')"><img src="image/34.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
       <div class="gallery-item" onclick="openLightbox('image/81.JPG','境内の風景')"><img src="image/81.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/82.JPG','境内の風景')"><img src="image/82.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/ojigi.jpeg','境内の風景')"><img src="image/ojigi.jpeg" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
       <div class="gallery-item" onclick="openLightbox('image/83.JPG','境内の風景')"><img src="image/83.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
       <div class="gallery-item" onclick="openLightbox('image/84.JPG','境内の風景')"><img src="image/84.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
       <div class="gallery-item" onclick="openLightbox('image/85.JPG','境内の風景')"><img src="image/85.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
@@ -1201,7 +1232,7 @@
         <img src="image/28.JPG" alt="境内の風景">
         <img src="image/34.JPG" alt="境内の風景">
         <img src="image/81.JPG" alt="境内の風景">
-        <img src="image/82.JPG" alt="境内の風景">
+        <img src="image/ojigi.jpeg" alt="境内の風景">
         <img src="image/83.JPG" alt="境内の風景">
         <img src="image/84.JPG" alt="境内の風景">
         <img src="image/85.JPG" alt="境内の風景">
@@ -1419,7 +1450,66 @@
         <img src="image/taishi-do002.jpeg" alt="舎心ヶ嶽への道">
         <div class="masonry-label">舎心ヶ嶽への道</div>
       </div>
+      <!-- 追加画像 -->
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/2.JPG','境内の風景')"><img src="image/2.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/3.JPG','境内の風景')"><img src="image/3.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/4.JPG','境内の風景')"><img src="image/4.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/5.JPG','境内の風景')"><img src="image/5.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/6.JPG','境内の風景')"><img src="image/6.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/13.JPG','境内の風景')"><img src="image/13.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/14.jpg','境内の風景')"><img src="image/14.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/17.JPG','境内の風景')"><img src="image/17.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/21.JPG','境内の風景')"><img src="image/21.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/23.JPG','境内の風景')"><img src="image/23.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/25.JPG','境内の風景')"><img src="image/25.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/30.JPG','境内の風景')"><img src="image/30.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/31.JPG','境内の風景')"><img src="image/31.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/32.jpg','境内の風景')"><img src="image/32.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/33.jpg','境内の風景')"><img src="image/33.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/35.JPG','境内の風景')"><img src="image/35.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/36.JPG','境内の風景')"><img src="image/36.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/37.JPG','境内の風景')"><img src="image/37.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/39.JPG','境内の風景')"><img src="image/39.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/40.JPG','境内の風景')"><img src="image/40.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/41.JPG','境内の風景')"><img src="image/41.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/42.JPG','境内の風景')"><img src="image/42.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/43.JPG','境内の風景')"><img src="image/43.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/44.JPG','境内の風景')"><img src="image/44.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/45.JPG','境内の風景')"><img src="image/45.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/48.JPG','境内の風景')"><img src="image/48.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/49.JPG','境内の風景')"><img src="image/49.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/51.JPG','境内の風景')"><img src="image/51.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/53.JPG','境内の風景')"><img src="image/53.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/54.JPG','境内の風景')"><img src="image/54.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/56.JPG','境内の風景')"><img src="image/56.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/57.JPG','境内の風景')"><img src="image/57.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/58.JPG','境内の風景')"><img src="image/58.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/59.JPG','境内の風景')"><img src="image/59.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/60.JPG','境内の風景')"><img src="image/60.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/61.JPG','境内の風景')"><img src="image/61.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/63.JPG','境内の風景')"><img src="image/63.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/64.JPG','境内の風景')"><img src="image/64.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/65.JPG','境内の風景')"><img src="image/65.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/67.JPG','境内の風景')"><img src="image/67.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/68.JPG','境内の風景')"><img src="image/68.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/69.JPG','境内の風景')"><img src="image/69.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/70.JPG','境内の風景')"><img src="image/70.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/71.JPG','境内の風景')"><img src="image/71.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/72.JPG','境内の風景')"><img src="image/72.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/73.JPG','境内の風景')"><img src="image/73.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/74.JPG','境内の風景')"><img src="image/74.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/76.JPG','境内の風景')"><img src="image/76.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/77.JPG','境内の風景')"><img src="image/77.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/ojigi.jpeg','お辞儀')"><img src="image/ojigi.jpeg" alt="お辞儀"><div class="masonry-label">お辞儀</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tahoutou.jpeg','多宝塔')"><img src="image/tahoutou.jpeg" alt="多宝塔"><div class="masonry-label">多宝塔</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file001.jpeg','太龍寺')"><img src="image/tairyu-ji-file001.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file002.jpeg','太龍寺')"><img src="image/tairyu-ji-file002.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file003.jpeg','太龍寺')"><img src="image/tairyu-ji-file003.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file004.jpeg','太龍寺')"><img src="image/tairyu-ji-file004.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file005.jpeg','太龍寺')"><img src="image/tairyu-ji-file005.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file006.jpeg','太龍寺')"><img src="image/tairyu-ji-file006.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
     </div>
+    <div class="gallery-pagination" id="galleryPagination"></div>
   </section>
 
   <!-- LIGHTBOX -->
@@ -1582,24 +1672,81 @@
 
     revealEls.forEach(el => observer.observe(el));
 
-    /* ===== GALLERY FILTER ===== */
+    /* ===== GALLERY FILTER + PAGINATION ===== */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const masonryItems = document.querySelectorAll('.masonry-item');
+    const masonryItems = Array.from(document.querySelectorAll('.masonry-item'));
+    const paginationEl = document.getElementById('galleryPagination');
+    const PER_PAGE = 12;
+    let currentCat = 'all';
+    let currentPage = 1;
+
+    function getFiltered() {
+      return masonryItems.filter(item =>
+        currentCat === 'all' || item.dataset.cat === currentCat
+      );
+    }
+
+    function renderGallery() {
+      const filtered = getFiltered();
+      const totalPages = Math.ceil(filtered.length / PER_PAGE);
+      const start = (currentPage - 1) * PER_PAGE;
+      const end = start + PER_PAGE;
+
+      // 全アイテム非表示
+      masonryItems.forEach(item => item.style.display = 'none');
+      // 該当ページのみ表示
+      filtered.forEach((item, i) => {
+        item.style.display = (i >= start && i < end) ? 'block' : 'none';
+      });
+
+      // ページネーション描画
+      paginationEl.innerHTML = '';
+      if (totalPages <= 1) return;
+
+      // 前へ
+      const prev = document.createElement('button');
+      prev.className = 'page-btn arrow';
+      prev.textContent = '‹';
+      prev.disabled = currentPage === 1;
+      prev.style.opacity = currentPage === 1 ? '0.3' : '1';
+      prev.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderGallery(); scrollToGallery(); } });
+      paginationEl.appendChild(prev);
+
+      // ページ番号
+      for (let p = 1; p <= totalPages; p++) {
+        const btn = document.createElement('button');
+        btn.className = 'page-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = p;
+        btn.addEventListener('click', () => { currentPage = p; renderGallery(); scrollToGallery(); });
+        paginationEl.appendChild(btn);
+      }
+
+      // 次へ
+      const next = document.createElement('button');
+      next.className = 'page-btn arrow';
+      next.textContent = '›';
+      next.disabled = currentPage === totalPages;
+      next.style.opacity = currentPage === totalPages ? '0.3' : '1';
+      next.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; renderGallery(); scrollToGallery(); } });
+      paginationEl.appendChild(next);
+    }
+
+    function scrollToGallery() {
+      document.getElementById('full-gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const cat = btn.dataset.filter;
-        masonryItems.forEach(item => {
-          if (cat === 'all' || item.dataset.cat === cat) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        currentCat = btn.dataset.filter;
+        currentPage = 1;
+        renderGallery();
       });
     });
+
+    // 初期表示
+    renderGallery();
 
     /* ===== LIGHTBOX ===== */
     function openLightbox(src, caption) {
