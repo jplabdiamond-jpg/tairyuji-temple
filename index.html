@@ -464,6 +464,55 @@
 
     .top-popup-btn:hover { background: var(--color-primary); }
 
+    .popup-lang-select {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .popup-lang-select strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .popup-lang-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .popup-lang-btn {
+      flex: 1;
+      max-width: 160px;
+      padding: 14px 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.15s;
+      font-family: var(--font-sans);
+    }
+
+    .popup-lang-btn.ja {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    .popup-lang-btn.en {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .popup-lang-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
     /* ====== LANGUAGE SWITCH — text overrides ====== */
     .lang-en .ja-text { display: none !important; }
     .lang-en .en-text { display: inline !important; }
@@ -1872,20 +1921,19 @@
   </div>
 
   <!-- ====== TOP PAGE POPUP ====== -->
-  <div id="top-popup" class="top-popup" role="dialog" aria-modal="true" aria-label="お知らせ">
+  <div id="top-popup" class="top-popup" role="dialog" aria-modal="true" aria-label="言語選択">
     <div class="top-popup-inner">
-      <button class="top-popup-close" id="top-popup-close" aria-label="閉じる">&times;</button>
       <div class="top-popup-logo">
         <img src="image/tairyuji_dragon_logo_3 (1).png" alt="太龍寺">
       </div>
-      <p class="top-popup-label" id="popup-label-ja">四国霊場 第二十一番札所</p>
-      <p class="top-popup-label" id="popup-label-en" style="display:none;">Temple No.21 of Shikoku Pilgrimage</p>
-      <h2 class="top-popup-title" id="popup-title-ja">西の高野 太龍寺へ<br>ようこそ</h2>
-      <h2 class="top-popup-title" id="popup-title-en" style="display:none;">Welcome to<br>Tairyuji Temple</h2>
-      <p class="top-popup-body" id="popup-body-ja">弘法大師ゆかりの霊山。<br>西の高野とも称される四国屈指の名刹です。</p>
-      <p class="top-popup-body" id="popup-body-en" style="display:none;">A sacred mountain associated with Kobo Daishi.<br>One of the finest temples in Shikoku.</p>
-      <a href="#info" class="top-popup-btn" id="popup-btn-ja" onclick="document.getElementById('top-popup').classList.remove('open')">参拝案内を見る</a>
-      <a href="#info" class="top-popup-btn" id="popup-btn-en" style="display:none;" onclick="document.getElementById('top-popup').classList.remove('open')">View Access Info</a>
+      <div class="popup-lang-select">
+        <strong>表示言語をお選びください。</strong>
+        Please select your language.
+      </div>
+      <div class="popup-lang-buttons">
+        <button class="popup-lang-btn ja" id="popup-btn-ja">日本語</button>
+        <button class="popup-lang-btn en" id="popup-btn-en">English</button>
+      </div>
     </div>
     <div class="top-popup-overlay" id="top-popup-overlay"></div>
   </div>
@@ -2118,9 +2166,10 @@
     (function() {
       const btn = document.getElementById('lang-toggle-btn');
       const label = document.getElementById('lang-toggle-label');
-      let isEn = false;
+      let isEn = window._langIsEn || false;
 
       function applyLang(en) {
+        window._langIsEn = en;
         document.documentElement.lang = en ? 'en' : 'ja';
         label.textContent = en ? 'JA' : 'EN';
 
@@ -2150,11 +2199,49 @@
       });
     })();
 
-    /* ===== TOP PAGE POPUP ===== */
+    /* ===== TOP PAGE POPUP (言語選択) ===== */
     (function() {
       const popup = document.getElementById('top-popup');
-      const closeBtn = document.getElementById('top-popup-close');
       const overlay = document.getElementById('top-popup-overlay');
+      const btnJa = document.getElementById('popup-btn-ja');
+      const btnEn = document.getElementById('popup-btn-en');
+
+      function closePopup() {
+        popup.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function selectLang(en) {
+        // lang toggle と同期
+        const langLabel = document.getElementById('lang-toggle-label');
+        if (en) {
+          // 英語を選択 → applyLang(true) と同等
+          document.documentElement.lang = 'en';
+          if (langLabel) langLabel.textContent = 'JA';
+          document.querySelectorAll('[data-en]').forEach(el => {
+            if (!el.dataset.ja) el.dataset.ja = el.innerHTML;
+            el.innerHTML = el.dataset.en;
+          });
+          ['popup-label-ja','popup-title-ja','popup-body-ja'].forEach(id => {
+            const el = document.getElementById(id); if (el) el.style.display = 'none';
+          });
+          ['popup-label-en','popup-title-en','popup-body-en'].forEach(id => {
+            const el = document.getElementById(id); if (el) el.style.display = '';
+          });
+          // グローバルフラグ更新（lang toggleのisEnと同期）
+          window._langIsEn = true;
+        } else {
+          document.documentElement.lang = 'ja';
+          if (langLabel) langLabel.textContent = 'EN';
+          window._langIsEn = false;
+        }
+        closePopup();
+      }
+
+      btnJa.addEventListener('click', () => selectLang(false));
+      btnEn.addEventListener('click', () => selectLang(true));
+      overlay.addEventListener('click', closePopup);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
 
       // セッション中1回だけ表示
       if (!sessionStorage.getItem('tairyuji_popup_shown')) {
@@ -2164,17 +2251,6 @@
         }, 1200);
         sessionStorage.setItem('tairyuji_popup_shown', '1');
       }
-
-      function closePopup() {
-        popup.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      closeBtn.addEventListener('click', closePopup);
-      overlay.addEventListener('click', closePopup);
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closePopup();
-      });
     })();
   </script>
 
