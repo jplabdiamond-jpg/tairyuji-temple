@@ -70,7 +70,8 @@
       object-fit: contain;
       transition: transform 0.5s ease;
       mix-blend-mode: multiply;
-      background: transparent;
+      background: #ffffff;
+      border-radius: 4px;
     }
 
     .nav-logo:hover img {
@@ -1302,12 +1303,12 @@
       </span>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">縁起</a></li>
-      <li><a href="#history">歴史</a></li>
-      <li><a href="#gallery">境内</a></li>
-      <li><a href="#spots">見どころ</a></li>
-      <li><a href="#full-gallery">ギャラリー</a></li>
-      <li><a href="#info">アクセス</a></li>
+      <li><a href="#about" data-en="About">縁起</a></li>
+      <li><a href="#history" data-en="History">歴史</a></li>
+      <li><a href="#gallery" data-en="Grounds">境内</a></li>
+      <li><a href="#spots" data-en="Highlights">見どころ</a></li>
+      <li><a href="#full-gallery" data-en="Gallery">ギャラリー</a></li>
+      <li><a href="#info" data-en="Access">アクセス</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -1316,12 +1317,12 @@
 
   <!-- MOBILE NAV DRAWER -->
   <div class="mobile-nav" id="mobile-nav">
-    <a href="#about" class="mobile-nav-link">縁起</a>
-    <a href="#history" class="mobile-nav-link">歴史</a>
-    <a href="#gallery" class="mobile-nav-link">境内の風景</a>
-    <a href="#spots" class="mobile-nav-link">見どころ</a>
-    <a href="#full-gallery" class="mobile-nav-link">フォトギャラリー</a>
-    <a href="#info" class="mobile-nav-link">アクセス</a>
+    <a href="#about" class="mobile-nav-link" data-en="About">縁起</a>
+    <a href="#history" class="mobile-nav-link" data-en="History">歴史</a>
+    <a href="#gallery" class="mobile-nav-link" data-en="Grounds">境内の風景</a>
+    <a href="#spots" class="mobile-nav-link" data-en="Highlights">見どころ</a>
+    <a href="#full-gallery" class="mobile-nav-link" data-en="Photo Gallery">フォトギャラリー</a>
+    <a href="#info" class="mobile-nav-link" data-en="Access">アクセス</a>
   </div>
 
   <!-- HERO SLIDESHOW -->
@@ -1333,9 +1334,9 @@
     <div class="hero-slide"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-number">四国霊場 第二十一番札所 ｜ 舎心山</p>
-      <h1 class="hero-title">太龍寺</h1>
-      <p class="hero-subtitle">西の高野 ― お大師様にめぐり逢う</p>
+      <p class="hero-number" data-en="Temple No.21 of Shikoku Pilgrimage ｜ Shashinjin">四国霊場 第二十一番札所 ｜ 舎心山</p>
+      <h1 class="hero-title" data-en="Tairyuji Temple">太龍寺</h1>
+      <p class="hero-subtitle" data-en="Nishi-no-Koya — Walking in the footsteps of Kobo Daishi">西の高野 ― お大師様にめぐり逢う</p>
     </div>
     <div class="hero-dots">
       <div class="hero-dot active" onclick="goSlide(0)"></div>
@@ -1355,18 +1356,18 @@
     <div class="about">
       <div class="about-text reveal-left">
         <p class="section-label">About</p>
-        <h2 class="section-title">太龍寺について</h2>
+        <h2 class="section-title" data-en="About Tairyuji">太龍寺について</h2>
         <div class="section-divider"></div>
-        <p>
+        <p data-en="Tairyuji stands near the summit of Mt. Tairyuji, approximately 600m above sea level in southern Tokushima Prefecture, revered since ancient times as the &quot;Koya of the West.&quot;">
           太龍寺は徳島県南部にそびえる標高約600mの太龍寺山の山頂近くに在り、
           古来より「西の高野山」と称されています。
         </p>
-        <p>
+        <p data-en="In 793 AD, the young Kobo Daishi Kukai, age 19, practiced the Kokuzo Gumonji-ho on the rocks of Mt. Tairyudake (Shashingadake) for one hundred days. The vast temple grounds include the Main Hall, Daishi Hall, Tahoto Pagoda, and more.">
           延暦12年（793）、19歳の弘法大師空海が太龍嶽（舎心ヶ嶽）の岩上で百日間にわたり
           「虚空蔵菩薩求聞持法」を修行なされた霊山です。広大な境内には本堂・大師堂・
           多宝塔・本坊・護摩堂・六角経蔵等が点在しています。
         </p>
-        <p>
+        <p data-en="&quot;Climbing the peak of Tairyuji in Awa, practicing at Cape Muroto in Tosa — the valley echoes without restraint as the morning star appears.&quot; Recorded in Daishi&apos;s Sangoshiiki at age 24, Tairyuji and Cape Muroto were sacred training grounds that shaped his spiritual thought.">
           「阿国太龍の嶽にのぼりよじ土州室戸の岬に勤念す 谷響を惜しまず明星来影す」——
           大師24歳の時にされた『三教指帰』にこう記され、太龍寺と室戸岬は
           青年期の大師の思想形成に重要な役割を果たした修行地です。
@@ -1381,7 +1382,7 @@
 
   <!-- QUOTE -->
   <div class="quote-strip reveal">
-    <p class="quote-text">はるか歴史の懐へ、大師の足跡を訪ねて……</p>
+    <p class="quote-text" data-en="Into the depths of history, following the footsteps of Kobo Daishi…">はるか歴史の懐へ、大師の足跡を訪ねて……</p>
     <p class="quote-sub">TAIRYŪ-JI — Temple 21, Shikoku Pilgrimage</p>
   </div>
 
@@ -1389,21 +1390,21 @@
   <section id="history" class="history-section">
     <div class="history-inner reveal">
       <p class="section-label">History</p>
-      <h2 class="section-title">太龍寺の縁起</h2>
+      <h2 class="section-title" data-en="Origins of Tairyuji">太龍寺の縁起</h2>
       <div class="section-divider"></div>
-      <p>
+      <p data-en="As noted, the history of Tairyuji spans over 1,200 years, beginning when the young Kobo Daishi Kukai practiced here.">
         先述の通り、若き日の弘法大師空海が修行されたのが１２００有年の歴史の始まりです。
       </p>
-      <p>
+      <p data-en="&quot;Climbing the peak of Tairyuji in Awa, practicing at Cape Muroto in Tosa.&quot; These words from Daishi&apos;s Sangoshiiki, written at age 24, affirm that both Tairyuji and Cape Muroto were vital sites in shaping his spiritual thought.">
         「阿国太龍の嶽にのぼりよじ土州室戸の岬に勤念す 谷響を惜しまず明星来影す」——
         大師24歳の時にされた『三教指帰』にこう記され、太龍寺と室戸岬は
         青年期の大師の思想形成に重要な役割を果たした修行地です。
       </p>
-      <p>
+      <p data-en="Later, Awa Governor Fujiwara Buzan, by order of Emperor Kanmu, developed the temple grounds. Under the patronage of successive lords and domain rulers, Tairyuji was maintained as the head training hall for the Kokuzo Gumonji-ho.">
         その後、桓武天皇の命を受けた阿波国司藤原文山が伽藍整備を行い、歴代領主・藩主の手厚い保護と
         信仰を受け、『虚空蔵菩薩求聞持法』の根本道場として法灯を継承し維持してきました。
       </p>
-      <p>
+      <p data-en="In 1992, commemorating the 1,200th anniversary of Kobo Daishi&apos;s ascent and the opening of the ropeway, a statue of Daishi in practice was erected. Once one of the most grueling climbs on the Shikoku Pilgrimage, visitors can now ascend comfortably by gondola in about 10 minutes.">
         平成4年（1992年）、弘法大師御入山1200年とロープウェイ開通を記念して求聞持法御修行大師像を建立しました。
         一に焼山、二にお鶴、三に太龍とお遍路泣かせの厳しい山道でしたが、
         現在は山麓から10分間の快適なゴンドラの車窓より景色を眺めながら登山できるようになりました。
@@ -1415,7 +1416,7 @@
   <div class="photo-banner">
     <img src="image/keidai001.jpeg" alt="太龍寺境内" loading="lazy">
     <div class="photo-banner-overlay">
-      <p class="photo-banner-text reveal">深山に宿る、千年の祈り</p>
+      <p class="photo-banner-text reveal" data-en="A thousand years of prayer, dwelling in the deep mountains">深山に宿る、千年の祈り</p>
     </div>
   </div>
 
@@ -1423,7 +1424,7 @@
   <section id="gallery" class="gallery-section">
     <div class="gallery-header reveal">
       <p class="section-label">Gallery</p>
-      <h2 class="section-title">境内の風景</h2>
+      <h2 class="section-title" data-en="Temple Grounds">境内の風景</h2>
       <div class="section-divider"></div>
     </div>
     <!-- デスクトップ: 4×4グリッド -->
@@ -1476,15 +1477,15 @@
   <section id="spots" class="spots-section">
     <div class="spots-inner">
       <p class="section-label">Highlights</p>
-      <h2 class="section-title">見どころ</h2>
+      <h2 class="section-title" data-en="Highlights">見どころ</h2>
       <div class="section-divider"></div>
       <div class="spots-grid">
 
         <div class="spot-card reveal reveal-delay-1">
           <img src="image/50.JPG" alt="本堂" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">本堂（虚空蔵菩薩）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Main Hall (Kokuzo Bosatsu)">本堂（虚空蔵菩薩）</h3>
+            <p class="spot-card-text" data-en="Built in 1852 by order of Lord Hachisuka of Awa Province. On January 12 each year, the doors open for the Shokaishiki ceremony. Visitors may enter the inner sanctum and worship the principal deity up close. Guardian deity for those born in the Year of the Ox or Tiger, and beneficial for memory improvement.">
               阿波国藩主蜂須賀侯の命により嘉永5（1852）年建立。毎年1月12日に開扉され初会式が厳修される。
               参拝者も内陣に入り間近で本尊を拝することができる。丑年・寅年の方の一代守り本尊。
               記憶力増進に御利益あり、三十三回忌の本尊。
@@ -1495,8 +1496,8 @@
         <div class="spot-card reveal reveal-delay-2">
           <img src="image/22.JPG" alt="大師堂" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">大師堂（弘法大師）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Daishi Hall (Kobo Daishi)">大師堂（弘法大師）</h3>
+            <p class="spot-card-text" data-en="Like Koyasan&apos;s Okunoin, cross the Mausoleum Bridge and walk the gallery to reach the mausoleum of Kobo Daishi. Each year on the 21st day of the third lunar month, the doors open for a memorial ceremony. Visitors may join in worship inside the hall.">
               高野山奥の院と同様に御廟の橋を渡り、拝殿廻廊を進むと弘法大師御廟が佇む。
               毎年、旧暦3月21日御廟を開扉し大師のご遺徳を偲ぶ法会を行う。
               参拝者も堂内にて参座可能。
@@ -1507,8 +1508,8 @@
         <div class="spot-card reveal reveal-delay-1">
           <img src="image/18.jpg" alt="護摩堂" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">護摩堂（不動明王）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Goma Hall (Fudo Myo-o)">護摩堂（不動明王）</h3>
+            <p class="spot-card-text" data-en="Though destroyed in the great fire of 1894, the principal deity Fudo Myo-o miraculously survived unharmed. Tairyuji&apos;s daily Goma fire ritual is renowned, and many devoted visitors request Goma prayers to fulfill difficult wishes.">
               明治27（1894）年に大火で焼失するも、本尊不動明王は奇跡的にも災禍を逃れ無事であった。
               太龍寺の日護摩（ひごま）は有名で、参拝者の難業の願意を叶える尊として
               護摩祈願をご依頼する信心の参拝者多数。
@@ -1519,8 +1520,8 @@
         <div class="spot-card reveal reveal-delay-2">
           <img src="image/79.JPG" alt="多宝塔" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">多宝塔（五大虚空蔵菩薩）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Tahoto Pagoda (Five Kokuzo Bosatsu)">多宝塔（五大虚空蔵菩薩）</h3>
+            <p class="spot-card-text" data-en="Enshrines five statues representing the five virtues of Kokuzo Bosatsu. Matching ensembles exist at Kyoto&apos;s Toji and Jingoji, and Koyasan&apos;s Entsu Ritsuin — extremely rare in Japan. Said to offer protection from natural disasters, political upheaval, and to bring good fortune.">
               虚空蔵菩薩が持つ5つの功能を五尊にそれぞれ配した尊像が奉安される。
               京都東寺・神護寺・高野山円通律寺にも奉安。国内には数例しかない大変希少な尊像である。
               天変地異・政変・除災招福に功徳あり。
@@ -1531,8 +1532,8 @@
         <div class="spot-card reveal reveal-delay-1">
           <img src="image/80.JPG" alt="舎心ヶ嶽" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">舎心ヶ嶽（しゃしんがだけ）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Shashingadake (Sacred Training Peak)">舎心ヶ嶽（しゃしんがだけ）</h3>
+            <p class="spot-card-text" data-en="The sacred site where the young Kobo Daishi trained. The statue faces east to venerate the Morning Star (Venus), believed to be a manifestation of Kokuzo Bosatsu. About 15 minutes from the ropeway summit station.">
               若き日の弘法大師空海が修行された聖跡。東方向を向かれているのは、虚空蔵菩薩の化身とされる
               明けの明星（金星）を拝するためである。ロープウェイ山頂駅より約15分。
             </p>
@@ -1542,8 +1543,8 @@
         <div class="spot-card reveal reveal-delay-2">
           <img src="image/7.JPG" alt="龍天井" loading="lazy">
           <div class="spot-card-body">
-            <h3 class="spot-card-title">龍天井（本坊 持仏の間前大廊下）</h3>
-            <p class="spot-card-text">
+            <h3 class="spot-card-title" data-en="Dragon Ceiling (Main Hall Corridor)">龍天井（本坊 持仏の間前大廊下）</h3>
+            <p class="spot-card-text" data-en="Dragons bring rain to the earth and fortune to people. Created by Takemura Shorei of Aki City, Kochi Prefecture — a student of Shijo school master Yukino Bairen — to ward off future calamity after the Meiji-era fire.">
               龍は大地には潤いを降らし、我々には清福をもたらしてくれる。明治の大火で焼失した本坊に
               向後災禍が及ばないよう、四條派の幸野楳嶺に師事した高知県安芸市出身の竹村松嶺の大作。
             </p>
@@ -1558,15 +1559,15 @@
   <section id="full-gallery" class="full-gallery-section">
     <div class="full-gallery-header reveal">
       <p class="section-label">Photo Gallery</p>
-      <h2 class="section-title">フォトギャラリー</h2>
+      <h2 class="section-title" data-en="Photo Gallery">フォトギャラリー</h2>
       <div class="section-divider"></div>
       <div class="gallery-filter">
-        <button class="filter-btn active" data-filter="all">すべて</button>
-        <button class="filter-btn" data-filter="entrance">参道・入口</button>
-        <button class="filter-btn" data-filter="hondou">本堂</button>
-        <button class="filter-btn" data-filter="keidai">境内</button>
-        <button class="filter-btn" data-filter="gosatu">堂宇</button>
-        <button class="filter-btn" data-filter="interior">内観</button>
+        <button class="filter-btn active" data-filter="all" data-en="All">すべて</button>
+        <button class="filter-btn" data-filter="entrance" data-en="Approach">参道・入口</button>
+        <button class="filter-btn" data-filter="hondou" data-en="Main Hall">本堂</button>
+        <button class="filter-btn" data-filter="keidai" data-en="Grounds">境内</button>
+        <button class="filter-btn" data-filter="gosatu" data-en="Halls">堂宇</button>
+        <button class="filter-btn" data-filter="interior" data-en="Interior">内観</button>
       </div>
     </div>
     <div class="masonry-grid">
@@ -1750,7 +1751,7 @@
   <div class="photo-banner">
     <img src="image/noukeijyo002.jpeg" alt="境内風景" loading="lazy">
     <div class="photo-banner-overlay">
-      <p class="photo-banner-text reveal">西の高野 ― 大師の足跡を辿る旅へ</p>
+      <p class="photo-banner-text reveal" data-en="Nishi-no-Koya — A journey tracing the footsteps of Kobo Daishi">西の高野 ― 大師の足跡を辿る旅へ</p>
     </div>
   </div>
 
@@ -1759,50 +1760,50 @@
     <div class="info-inner">
       <div>
         <p class="section-label">Access & Info</p>
-        <h2 class="section-title">参拝案内</h2>
+        <h2 class="section-title" data-en="Visitor Information">参拝案内</h2>
         <div class="section-divider"></div>
         <table class="info-table">
           <tr>
-            <th>名称</th>
-            <td>舎心山 常住院 太龍寺</td>
+            <th data-en="Name">名称</th>
+            <td data-en="Shashinjin Jojuin Tairyuji">舎心山 常住院 太龍寺</td>
           </tr>
           <tr>
-            <th>札所番号</th>
-            <td>四国霊場 第二十一番</td>
+            <th data-en="Temple No.">札所番号</th>
+            <td data-en="No. 21, Shikoku Pilgrimage">四国霊場 第二十一番</td>
           </tr>
           <tr>
-            <th>本尊</th>
-            <td>虚空蔵菩薩</td>
+            <th data-en="Main Deity">本尊</th>
+            <td data-en="Kokuzo Bosatsu (Akasagarbha)">虚空蔵菩薩</td>
           </tr>
           <tr>
-            <th>真言</th>
+            <th data-en="Mantra">真言</th>
             <td>のうぼう あきゃしゃ きゃらばや<br>おん ありきゃ まりぼり そわか</td>
           </tr>
           <tr>
-            <th>所在地</th>
+            <th data-en="Address">所在地</th>
             <td>〒771－5173　徳島県阿南市加茂町龍山２</td>
           </tr>
           <tr>
-            <th>電話番号</th>
+            <th data-en="Tel">電話番号</th>
             <td>0884-62-2021</td>
           </tr>
           <tr>
-            <th>太龍寺ロープウェイ</th>
-            <td>山麓駅より約10分（道の駅　鷲の里内）</td>
+            <th data-en="Ropeway">太龍寺ロープウェイ</th>
+            <td data-en="Approx. 10 min from the base station (inside Michi-no-Eki Washi-no-Sato)">山麓駅より約10分（道の駅　鷲の里内）</td>
           </tr>
           <tr>
-            <th>駐車場</th>
-            <td>太龍寺ロープウェイ山麓駅（道の駅　鷲の里）に無料駐車場あり<br>※カーナビ入力は、0884－62－3100（太龍寺ロープウェイ）を入力して下さい。</td>
+            <th data-en="Parking">駐車場</th>
+            <td data-en="Free parking at Tairyuji Ropeway base station (Michi-no-Eki Washi-no-Sato). For car navigation, enter: 0884-62-3100 (Tairyuji Ropeway).">太龍寺ロープウェイ山麓駅（道の駅　鷲の里）に無料駐車場あり<br>※カーナビ入力は、0884－62－3100（太龍寺ロープウェイ）を入力して下さい。</td>
           </tr>
           <tr>
-            <th>宗派</th>
-            <td>高野山真言宗</td>
+            <th data-en="Sect">宗派</th>
+            <td data-en="Koyasan Shingon Sect">高野山真言宗</td>
           </tr>
         </table>
       </div>
       <div>
         <p class="section-label">Map</p>
-        <h2 class="section-title">地図</h2>
+        <h2 class="section-title" data-en="Map">地図</h2>
         <div class="section-divider"></div>
         <div class="map-embed">
           <iframe
@@ -1816,7 +1817,7 @@
             title="太龍寺の地図">
           </iframe>
         </div>
-        <p style="margin-top:16px; font-size:0.8rem; color:var(--color-text-light); line-height:1.8;">
+        <p style="margin-top:16px; font-size:0.8rem; color:var(--color-text-light); line-height:1.8;" data-en="※ For ropeway access, head south along Prefectural Route 19 beside the Naka River to the Washi-no-Sato Ropeway base station.">
           ※ ロープウェイをご利用の場合は、那賀川沿いの県道19号線を南下し、<br>
           鷲の里ロープウェイ山麓駅をお目指しください。
         </p>
@@ -1828,7 +1829,7 @@
   <section id="sns" class="sns-section">
     <div class="sns-inner">
       <p class="section-label">Follow Us</p>
-      <h2 class="section-title">公式SNS</h2>
+      <h2 class="section-title" data-en="Official SNS">公式SNS</h2>
       <div class="section-divider"></div>
       <div class="sns-cards">
         <div class="sns-card">
@@ -1841,7 +1842,7 @@
           <div class="sns-qr">
             <img src="tairyuji_facebook.png" alt="Facebook QRコード" loading="lazy">
           </div>
-          <p class="sns-caption">QRコードでフォロー</p>
+          <p class="sns-caption" data-en="Follow via QR Code">QRコードでフォロー</p>
         </div>
         <div class="sns-card">
           <div class="sns-logo-wrap">
@@ -1862,7 +1863,7 @@
           <div class="sns-qr">
             <img src="tairyuji_insta.png" alt="Instagram QRコード" loading="lazy">
           </div>
-          <p class="sns-caption">QRコードでフォロー</p>
+          <p class="sns-caption" data-en="Follow via QR Code">QRコードでフォロー</p>
         </div>
       </div>
     </div>
@@ -2122,34 +2123,18 @@
       const label = document.getElementById('lang-toggle-label');
       let isEn = false;
 
-      // 言語切り替え対象テキスト定義
-      const texts = {
-        // ナビ
-        'nav-about':     { ja: 'お寺について', en: 'About' },
-        'nav-history':   { ja: '歴史・由緒',   en: 'History' },
-        'nav-gallery':   { ja: '境内写真',      en: 'Gallery' },
-        'nav-access':    { ja: '参拝案内',      en: 'Access' },
-        // ヒーロー
-        'hero-title-txt':  { ja: '西の高野　太龍寺', en: 'Tairyuji Temple' },
-        'hero-sub-txt':    { ja: '四国霊場 第二十一番札所　舎心山', en: 'Temple No.21 of the Shikoku Pilgrimage' },
-        // info テーブル行
-        'info-name-th':    { ja: '名称',         en: 'Name' },
-        'info-num-th':     { ja: '札所番号',     en: 'Temple No.' },
-        'info-honzon-th':  { ja: '本尊',         en: 'Main Deity' },
-        'info-shingon-th': { ja: '真言',         en: 'Mantra' },
-        'info-addr-th':    { ja: '所在地',       en: 'Address' },
-        'info-tel-th':     { ja: '電話番号',     en: 'Tel' },
-        'info-rope-th':    { ja: '太龍寺ロープウェイ', en: 'Ropeway' },
-        'info-park-th':    { ja: '駐車場',       en: 'Parking' },
-        'info-shu-th':     { ja: '宗派',         en: 'Sect' },
-        // SNS
-        'sns-title-txt':   { ja: '公式SNS',      en: 'Official SNS' },
-        'sns-follow-txt':  { ja: 'QRコードでフォロー', en: 'Follow via QR Code' },
-      };
-
       function applyLang(en) {
         document.documentElement.lang = en ? 'en' : 'ja';
         label.textContent = en ? 'JA' : 'EN';
+
+        // data-en属性を持つ全要素を一括切り替え
+        document.querySelectorAll('[data-en]').forEach(el => {
+          if (!el.dataset.ja) {
+            // 初回: 元の日本語テキストを保存
+            el.dataset.ja = el.innerHTML;
+          }
+          el.innerHTML = en ? el.dataset.en : el.dataset.ja;
+        });
 
         // ポップアップ切り替え
         ['popup-label-ja','popup-title-ja','popup-body-ja','popup-btn-ja'].forEach(id => {
@@ -2159,32 +2144,6 @@
         ['popup-label-en','popup-title-en','popup-body-en','popup-btn-en'].forEach(id => {
           const el = document.getElementById(id);
           if (el) el.style.display = en ? '' : 'none';
-        });
-
-        // SNSキャプション
-        document.querySelectorAll('.sns-caption').forEach(el => {
-          el.textContent = en ? 'Follow via QR Code' : 'QRコードでフォロー';
-        });
-
-        // セクションラベル（英語はそのまま）
-        // SNSタイトル
-        const snsTitle = document.querySelector('.sns-section .section-title');
-        if (snsTitle) snsTitle.textContent = en ? 'Official SNS' : '公式SNS';
-
-        // 参拝案内テーブルのth
-        const thMap = {
-          '名称': 'Name', '札所番号': 'Temple No.', '本尊': 'Main Deity',
-          '真言': 'Mantra', '所在地': 'Address', '電話番号': 'Tel',
-          '太龍寺ロープウェイ': 'Ropeway', '駐車場': 'Parking', '宗派': 'Sect'
-        };
-        document.querySelectorAll('.info-table th').forEach(th => {
-          if (en) {
-            const enTxt = thMap[th.dataset.ja || th.textContent.trim()];
-            if (!th.dataset.ja) th.dataset.ja = th.textContent.trim();
-            if (enTxt) th.textContent = enTxt;
-          } else {
-            if (th.dataset.ja) th.textContent = th.dataset.ja;
-          }
         });
       }
 
@@ -2228,13 +2187,13 @@
       <div>
         <p class="footer-logo">
           太龍寺
-          <span>四国霊場 第二十一番札所 舎心山</span>
+          <span data-en="Temple No.21, Shikoku Pilgrimage — Shashinjin">四国霊場 第二十一番札所 舎心山</span>
         </p>
       </div>
       <div class="footer-info">
-        <p>徳島県那賀郡那賀町鷲敷字太龍寺</p>
+        <p data-en="Tairyuji, Washiki, Naka-cho, Naka-gun, Tokushima">徳島県那賀郡那賀町鷲敷字太龍寺</p>
         <p>TEL: 0884-62-2021</p>
-        <p>高野山真言宗</p>
+        <p data-en="Koyasan Shingon Sect">高野山真言宗</p>
       </div>
     </div>
     <p class="footer-copy">© 2025 太龍寺 Tairyū-ji Temple. All rights reserved.</p>
