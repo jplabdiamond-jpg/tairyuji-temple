@@ -69,6 +69,8 @@
       height: 54px;
       object-fit: contain;
       transition: transform 0.5s ease;
+      mix-blend-mode: multiply;
+      background: transparent;
     }
 
     .nav-logo:hover img {
@@ -256,6 +258,218 @@
       50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
       100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
     }
+
+    /* ====== SNS SECTION ====== */
+    .sns-section {
+      background: var(--color-bg-warm);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .sns-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .sns-cards {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .sns-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 220px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .sns-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .sns-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sns-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .sns-name {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text-light);
+      font-family: var(--font-sans);
+    }
+
+    .sns-qr {
+      width: 140px;
+      height: 140px;
+      border: 1px solid var(--color-border);
+      padding: 6px;
+      background: white;
+    }
+
+    .sns-qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .sns-caption {
+      font-size: 0.72rem;
+      color: var(--color-text-light);
+      letter-spacing: 0.1em;
+    }
+
+    /* ====== LANGUAGE TOGGLE ====== */
+    .lang-toggle-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    .lang-toggle-btn:hover {
+      background: var(--color-accent-light);
+      transform: scale(1.1);
+    }
+
+    /* ====== TOP POPUP ====== */
+    .top-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-popup.open {
+      display: flex;
+    }
+
+    .top-popup-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(3px);
+    }
+
+    .top-popup-inner {
+      position: relative;
+      z-index: 1;
+      background: white;
+      padding: 48px 40px 40px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      animation: popupFadeIn 0.4s ease;
+      border-top: 3px solid var(--color-accent);
+    }
+
+    @keyframes popupFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .top-popup-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--color-text-light);
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .top-popup-close:hover { color: var(--color-primary); }
+
+    .top-popup-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      overflow: hidden;
+    }
+
+    .top-popup-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .top-popup-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--color-accent);
+      margin-bottom: 10px;
+    }
+
+    .top-popup-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 4vw, 1.7rem);
+      letter-spacing: 0.15em;
+      color: var(--color-primary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .top-popup-body {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .top-popup-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: var(--color-accent);
+      color: white;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .top-popup-btn:hover { background: var(--color-primary); }
+
+    /* ====== LANGUAGE SWITCH — text overrides ====== */
+    .lang-en .ja-text { display: none !important; }
+    .lang-en .en-text { display: inline !important; }
+    .lang-ja .en-text { display: none !important; }
 
     /* ====== SCROLL REVEAL ====== */
     .reveal {
@@ -1056,6 +1270,18 @@
       .footer-info { text-align: left; }
 
       .history-section, .gallery-section, .spots-section, .info-section { padding: 64px 20px; }
+
+      /* SNS mobile */
+      .sns-section { padding: 60px 20px; }
+      .sns-cards { gap: 24px; }
+      .sns-card { width: 160px; padding: 24px 16px; }
+      .sns-qr { width: 110px; height: 110px; }
+
+      /* Lang toggle mobile */
+      .lang-toggle-btn { width: 44px; height: 44px; bottom: 20px; right: 20px; font-size: 0.7rem; }
+
+      /* Popup mobile */
+      .top-popup-inner { padding: 36px 24px 32px; }
     }
   </style>
   <link rel="preload" href="image/8.JPG" as="image">
@@ -1598,6 +1824,74 @@
     </div>
   </section>
 
+  <!-- ====== SNS / QR CODES ====== -->
+  <section id="sns" class="sns-section">
+    <div class="sns-inner">
+      <p class="section-label">Follow Us</p>
+      <h2 class="section-title">公式SNS</h2>
+      <div class="section-divider"></div>
+      <div class="sns-cards">
+        <div class="sns-card">
+          <div class="sns-logo-wrap">
+            <svg class="sns-icon" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073C24 5.404 18.629 0 12 0S0 5.404 0 12.073C0 18.101 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.026 1.79-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+            </svg>
+            <span class="sns-name">Facebook</span>
+          </div>
+          <div class="sns-qr">
+            <img src="tairyuji_facebook.png" alt="Facebook QRコード" loading="lazy">
+          </div>
+          <p class="sns-caption">QRコードでフォロー</p>
+        </div>
+        <div class="sns-card">
+          <div class="sns-logo-wrap">
+            <svg class="sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#f09433"/>
+                  <stop offset="25%" style="stop-color:#e6683c"/>
+                  <stop offset="50%" style="stop-color:#dc2743"/>
+                  <stop offset="75%" style="stop-color:#cc2366"/>
+                  <stop offset="100%" style="stop-color:#bc1888"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span class="sns-name">Instagram</span>
+          </div>
+          <div class="sns-qr">
+            <img src="tairyuji_insta.png" alt="Instagram QRコード" loading="lazy">
+          </div>
+          <p class="sns-caption">QRコードでフォロー</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LANGUAGE TOGGLE BUTTON ====== -->
+  <div id="lang-toggle-btn" class="lang-toggle-btn" title="Switch Language">
+    <span id="lang-toggle-label">EN</span>
+  </div>
+
+  <!-- ====== TOP PAGE POPUP ====== -->
+  <div id="top-popup" class="top-popup" role="dialog" aria-modal="true" aria-label="お知らせ">
+    <div class="top-popup-inner">
+      <button class="top-popup-close" id="top-popup-close" aria-label="閉じる">&times;</button>
+      <div class="top-popup-logo">
+        <img src="image/tairyuji_dragon_logo_3.png" alt="太龍寺" style="mix-blend-mode:multiply;">
+      </div>
+      <p class="top-popup-label" id="popup-label-ja">四国霊場 第二十一番札所</p>
+      <p class="top-popup-label" id="popup-label-en" style="display:none;">Temple No.21 of Shikoku Pilgrimage</p>
+      <h2 class="top-popup-title" id="popup-title-ja">西の高野 太龍寺へ<br>ようこそ</h2>
+      <h2 class="top-popup-title" id="popup-title-en" style="display:none;">Welcome to<br>Tairyuji Temple</h2>
+      <p class="top-popup-body" id="popup-body-ja">弘法大師ゆかりの霊山。<br>西の高野とも称される四国屈指の名刹です。</p>
+      <p class="top-popup-body" id="popup-body-en" style="display:none;">A sacred mountain associated with Kobo Daishi.<br>One of the finest temples in Shikoku.</p>
+      <a href="#info" class="top-popup-btn" id="popup-btn-ja" onclick="document.getElementById('top-popup').classList.remove('open')">参拝案内を見る</a>
+      <a href="#info" class="top-popup-btn" id="popup-btn-en" style="display:none;" onclick="document.getElementById('top-popup').classList.remove('open')">View Access Info</a>
+    </div>
+    <div class="top-popup-overlay" id="top-popup-overlay"></div>
+  </div>
+
   <script defer>
     /* ===== HAMBURGER MENU ===== */
     const hamburger = document.getElementById('hamburger');
@@ -1821,6 +2115,111 @@
         navEl.style.boxShadow = 'none';
       }
     });
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    (function() {
+      const btn = document.getElementById('lang-toggle-btn');
+      const label = document.getElementById('lang-toggle-label');
+      let isEn = false;
+
+      // 言語切り替え対象テキスト定義
+      const texts = {
+        // ナビ
+        'nav-about':     { ja: 'お寺について', en: 'About' },
+        'nav-history':   { ja: '歴史・由緒',   en: 'History' },
+        'nav-gallery':   { ja: '境内写真',      en: 'Gallery' },
+        'nav-access':    { ja: '参拝案内',      en: 'Access' },
+        // ヒーロー
+        'hero-title-txt':  { ja: '西の高野　太龍寺', en: 'Tairyuji Temple' },
+        'hero-sub-txt':    { ja: '四国霊場 第二十一番札所　舎心山', en: 'Temple No.21 of the Shikoku Pilgrimage' },
+        // info テーブル行
+        'info-name-th':    { ja: '名称',         en: 'Name' },
+        'info-num-th':     { ja: '札所番号',     en: 'Temple No.' },
+        'info-honzon-th':  { ja: '本尊',         en: 'Main Deity' },
+        'info-shingon-th': { ja: '真言',         en: 'Mantra' },
+        'info-addr-th':    { ja: '所在地',       en: 'Address' },
+        'info-tel-th':     { ja: '電話番号',     en: 'Tel' },
+        'info-rope-th':    { ja: '太龍寺ロープウェイ', en: 'Ropeway' },
+        'info-park-th':    { ja: '駐車場',       en: 'Parking' },
+        'info-shu-th':     { ja: '宗派',         en: 'Sect' },
+        // SNS
+        'sns-title-txt':   { ja: '公式SNS',      en: 'Official SNS' },
+        'sns-follow-txt':  { ja: 'QRコードでフォロー', en: 'Follow via QR Code' },
+      };
+
+      function applyLang(en) {
+        document.documentElement.lang = en ? 'en' : 'ja';
+        label.textContent = en ? 'JA' : 'EN';
+
+        // ポップアップ切り替え
+        ['popup-label-ja','popup-title-ja','popup-body-ja','popup-btn-ja'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = en ? 'none' : '';
+        });
+        ['popup-label-en','popup-title-en','popup-body-en','popup-btn-en'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = en ? '' : 'none';
+        });
+
+        // SNSキャプション
+        document.querySelectorAll('.sns-caption').forEach(el => {
+          el.textContent = en ? 'Follow via QR Code' : 'QRコードでフォロー';
+        });
+
+        // セクションラベル（英語はそのまま）
+        // SNSタイトル
+        const snsTitle = document.querySelector('.sns-section .section-title');
+        if (snsTitle) snsTitle.textContent = en ? 'Official SNS' : '公式SNS';
+
+        // 参拝案内テーブルのth
+        const thMap = {
+          '名称': 'Name', '札所番号': 'Temple No.', '本尊': 'Main Deity',
+          '真言': 'Mantra', '所在地': 'Address', '電話番号': 'Tel',
+          '太龍寺ロープウェイ': 'Ropeway', '駐車場': 'Parking', '宗派': 'Sect'
+        };
+        document.querySelectorAll('.info-table th').forEach(th => {
+          if (en) {
+            const enTxt = thMap[th.dataset.ja || th.textContent.trim()];
+            if (!th.dataset.ja) th.dataset.ja = th.textContent.trim();
+            if (enTxt) th.textContent = enTxt;
+          } else {
+            if (th.dataset.ja) th.textContent = th.dataset.ja;
+          }
+        });
+      }
+
+      btn.addEventListener('click', () => {
+        isEn = !isEn;
+        applyLang(isEn);
+      });
+    })();
+
+    /* ===== TOP PAGE POPUP ===== */
+    (function() {
+      const popup = document.getElementById('top-popup');
+      const closeBtn = document.getElementById('top-popup-close');
+      const overlay = document.getElementById('top-popup-overlay');
+
+      // セッション中1回だけ表示
+      if (!sessionStorage.getItem('tairyuji_popup_shown')) {
+        setTimeout(() => {
+          popup.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }, 1200);
+        sessionStorage.setItem('tairyuji_popup_shown', '1');
+      }
+
+      function closePopup() {
+        popup.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closePopup);
+      overlay.addEventListener('click', closePopup);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closePopup();
+      });
+    })();
   </script>
 
   <!-- FOOTER -->
