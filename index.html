@@ -137,9 +137,10 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-      transform: scale(1.06);
-      animation: heroKenBurns 8s ease-out infinite alternate;
+      transition: opacity 1.2s ease-in-out;
+      transform: scale(1.04);
+      will-change: opacity, transform;
+      animation: heroKenBurns 10s ease-out infinite alternate;
     }
 
     .hero-slide.active {
@@ -1057,15 +1058,18 @@
       .history-section, .gallery-section, .spots-section, .info-section { padding: 64px 20px; }
     }
   </style>
+  <link rel="preload" href="image/8.JPG" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="image/tairyuji_dragon_logo_3.png" alt="太龍寺 龍紋ロゴ">
+      <img src="image/tairyuji_dragon_logo_3.png" alt="太龍寺 龍紋ロゴ" fetchpriority="high">
       <span class="nav-logo-text">
         <span class="nav-logo-name">太龍寺</span>
         <span class="nav-logo-sub">四国霊場 第二十一番札所</span>
@@ -1132,18 +1136,18 @@
           古来より「西の高野山」と称されています。
         </p>
         <p>
-          延暦12年（793）、19歳の弘法大師空海が太龍嶽（舎心ヶ嶽）の上で百日間にわたり
+          延暦12年（793）、19歳の弘法大師空海が太龍嶽（舎心ヶ嶽）の岩上で百日間にわたり
           「虚空蔵菩薩求聞持法」を修行なされた霊山です。広大な境内には本堂・大師堂・
           多宝塔・本坊・護摩堂・六角経蔵等が点在しています。
         </p>
         <p>
-          「阿国太龍の嶽にのぼりよじ土州室戸の岬に動念す 谷響を惜しまず明星来影す」——
-          大師24歳の時に著された『三教指帰』にこう記され、太龍寺と室戸岬は
+          「阿国太龍の嶽にのぼりよじ土州室戸の岬に勤念す 谷響を惜しまず明星来影す」——
+          大師24歳の時にされた『三教指帰』にこう記され、太龍寺と室戸岬は
           青年期の大師の思想形成に重要な役割を果たした修行地です。
         </p>
       </div>
       <div class="about-image reveal-right">
-        <img src="image/hondou001.jpeg" alt="太龍寺本堂">
+        <img src="image/hondou001.jpeg" alt="太龍寺本堂" fetchpriority="high">
         <div class="about-image-accent"></div>
       </div>
     </div>
@@ -1162,20 +1166,16 @@
       <h2 class="section-title">太龍寺の縁起</h2>
       <div class="section-divider"></div>
       <p>
-        太龍寺は徳島県南部にそびえる標高約600mの山上近くに在る山岳寺院です。古来より「西の高野山」と称されています。
-        延暦12（793）年、19歳の弘法大師空海が太龍嶽（舎心ヶ嶽）の岩上で100日間にわたり
-        『虚空蔵菩薩求聞持法』という修行をされたことが始まりです。
+        先述の通り、若き日の弘法大師空海が修行されたのが１２００有年の歴史の始まりです。
       </p>
       <p>
-        唐（中国）から請来されて間もない最先端の修行法で、記憶力を増進させ経典の理解を深めるもので、
-        現在でも研鑽する修行僧が絶えません。
-        「阿国太龍の嶽にのぼりよじ土州室戸の岬に動念す 谷響を惜しまず明星来影す」——
-        大師24歳の時に著された『三教指帰』にこう記され、太龍寺と室戸岬は
+        「阿国太龍の嶽にのぼりよじ土州室戸の岬に勤念す 谷響を惜しまず明星来影す」——
+        大師24歳の時にされた『三教指帰』にこう記され、太龍寺と室戸岬は
         青年期の大師の思想形成に重要な役割を果たした修行地です。
       </p>
       <p>
         その後、桓武天皇の命を受けた阿波国司藤原文山が伽藍整備を行い、歴代領主・藩主の手厚い保護と
-        信仰を受け、『虚空蔵菩薩求聞持法』の根本道場として法灯を維持してきました。
+        信仰を受け、『虚空蔵菩薩求聞持法』の根本道場として法灯を継承し維持してきました。
       </p>
       <p>
         平成4年（1992年）、弘法大師御入山1200年とロープウェイ開通を記念して求聞持法御修行大師像を建立しました。
@@ -1187,7 +1187,7 @@
 
   <!-- PHOTO BANNER -->
   <div class="photo-banner">
-    <img src="image/keidai001.jpeg" alt="太龍寺境内">
+    <img src="image/keidai001.jpeg" alt="太龍寺境内" loading="lazy">
     <div class="photo-banner-overlay">
       <p class="photo-banner-text reveal">深山に宿る、千年の祈り</p>
     </div>
@@ -1202,43 +1202,43 @@
     </div>
     <!-- デスクトップ: 4×4グリッド -->
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="openLightbox('image/11.JPG','境内の風景')"><img src="image/11.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/10.JPG','境内の風景')"><img src="image/10.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/15.jpg','境内の風景')"><img src="image/15.jpg" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/19.jpg','境内の風景')"><img src="image/19.jpg" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/24.JPG','境内の風景')"><img src="image/24.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/26.JPG','境内の風景')"><img src="image/26.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/28.JPG','境内の風景')"><img src="image/28.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/34.JPG','境内の風景')"><img src="image/34.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/81.JPG','境内の風景')"><img src="image/81.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/ojigi.jpeg','境内の風景')"><img src="image/ojigi.jpeg" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/83.JPG','境内の風景')"><img src="image/83.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/84.JPG','境内の風景')"><img src="image/84.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/85.JPG','境内の風景')"><img src="image/85.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/86.JPG','境内の風景')"><img src="image/86.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/87.JPG','境内の風景')"><img src="image/87.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
-      <div class="gallery-item" onclick="openLightbox('image/88.JPG','境内の風景')"><img src="image/88.JPG" alt="境内の風景"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/11.JPG','境内の風景')"><img src="image/11.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/10.JPG','境内の風景')"><img src="image/10.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/15.jpg','境内の風景')"><img src="image/15.jpg" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/19.jpg','境内の風景')"><img src="image/19.jpg" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/24.JPG','境内の風景')"><img src="image/24.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/26.JPG','境内の風景')"><img src="image/26.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/28.JPG','境内の風景')"><img src="image/28.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/34.JPG','境内の風景')"><img src="image/34.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/81.JPG','境内の風景')"><img src="image/81.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/ojigi.jpeg','境内の風景')"><img src="image/ojigi.jpeg" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/83.JPG','境内の風景')"><img src="image/83.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/84.JPG','境内の風景')"><img src="image/84.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/85.JPG','境内の風景')"><img src="image/85.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/86.JPG','境内の風景')"><img src="image/86.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/87.JPG','境内の風景')"><img src="image/87.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
+      <div class="gallery-item" onclick="openLightbox('image/88.JPG','境内の風景')"><img src="image/88.JPG" alt="境内の風景" loading="lazy"><div class="gallery-item-label">境内の風景</div></div>
     </div>
 
     <!-- モバイル: スライドショー -->
     <div class="gallery-slideshow" id="galSlideshow">
       <div class="gallery-slideshow-track" id="galTrack">
-        <img src="image/11.JPG" alt="境内の風景">
-        <img src="image/10.JPG" alt="境内の風景">
-        <img src="image/15.jpg" alt="境内の風景">
-        <img src="image/19.jpg" alt="境内の風景">
-        <img src="image/24.JPG" alt="境内の風景">
-        <img src="image/26.JPG" alt="境内の風景">
-        <img src="image/28.JPG" alt="境内の風景">
-        <img src="image/34.JPG" alt="境内の風景">
-        <img src="image/81.JPG" alt="境内の風景">
-        <img src="image/ojigi.jpeg" alt="境内の風景">
-        <img src="image/83.JPG" alt="境内の風景">
-        <img src="image/84.JPG" alt="境内の風景">
-        <img src="image/85.JPG" alt="境内の風景">
-        <img src="image/86.JPG" alt="境内の風景">
-        <img src="image/87.JPG" alt="境内の風景">
-        <img src="image/88.JPG" alt="境内の風景">
+        <img src="image/11.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/10.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/15.jpg" alt="境内の風景" loading="lazy">
+        <img src="image/19.jpg" alt="境内の風景" loading="lazy">
+        <img src="image/24.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/26.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/28.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/34.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/81.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/ojigi.jpeg" alt="境内の風景" loading="lazy">
+        <img src="image/83.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/84.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/85.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/86.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/87.JPG" alt="境内の風景" loading="lazy">
+        <img src="image/88.JPG" alt="境内の風景" loading="lazy">
       </div>
       <button class="gs-btn prev" onclick="galMove(-1)">&#8249;</button>
       <button class="gs-btn next" onclick="galMove(1)">&#8250;</button>
@@ -1255,7 +1255,7 @@
       <div class="spots-grid">
 
         <div class="spot-card reveal reveal-delay-1">
-          <img src="image/50.JPG" alt="本堂">
+          <img src="image/50.JPG" alt="本堂" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">本堂（虚空蔵菩薩）</h3>
             <p class="spot-card-text">
@@ -1267,7 +1267,7 @@
         </div>
 
         <div class="spot-card reveal reveal-delay-2">
-          <img src="image/22.JPG" alt="大師堂">
+          <img src="image/22.JPG" alt="大師堂" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">大師堂（弘法大師）</h3>
             <p class="spot-card-text">
@@ -1279,7 +1279,7 @@
         </div>
 
         <div class="spot-card reveal reveal-delay-1">
-          <img src="image/18.jpg" alt="護摩堂">
+          <img src="image/18.jpg" alt="護摩堂" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">護摩堂（不動明王）</h3>
             <p class="spot-card-text">
@@ -1291,7 +1291,7 @@
         </div>
 
         <div class="spot-card reveal reveal-delay-2">
-          <img src="image/79.JPG" alt="多宝塔">
+          <img src="image/79.JPG" alt="多宝塔" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">多宝塔（五大虚空蔵菩薩）</h3>
             <p class="spot-card-text">
@@ -1303,7 +1303,7 @@
         </div>
 
         <div class="spot-card reveal reveal-delay-1">
-          <img src="image/80.JPG" alt="舎心ヶ嶽">
+          <img src="image/80.JPG" alt="舎心ヶ嶽" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">舎心ヶ嶽（しゃしんがだけ）</h3>
             <p class="spot-card-text">
@@ -1314,7 +1314,7 @@
         </div>
 
         <div class="spot-card reveal reveal-delay-2">
-          <img src="image/7.JPG" alt="龍天井">
+          <img src="image/7.JPG" alt="龍天井" loading="lazy">
           <div class="spot-card-body">
             <h3 class="spot-card-title">龍天井（本坊 持仏の間前大廊下）</h3>
             <p class="spot-card-text">
@@ -1345,168 +1345,168 @@
     </div>
     <div class="masonry-grid">
       <!-- 番号画像（前半） -->
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/2.JPG','境内の風景')"><img src="image/2.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/3.JPG','境内の風景')"><img src="image/3.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/4.JPG','境内の風景')"><img src="image/4.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/5.JPG','境内の風景')"><img src="image/5.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/6.JPG','境内の風景')"><img src="image/6.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/13.JPG','境内の風景')"><img src="image/13.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/14.jpg','境内の風景')"><img src="image/14.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/17.JPG','境内の風景')"><img src="image/17.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/21.JPG','境内の風景')"><img src="image/21.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/23.JPG','境内の風景')"><img src="image/23.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/25.JPG','境内の風景')"><img src="image/25.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/30.JPG','境内の風景')"><img src="image/30.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/31.JPG','境内の風景')"><img src="image/31.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/32.jpg','境内の風景')"><img src="image/32.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/33.jpg','境内の風景')"><img src="image/33.jpg" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/35.JPG','境内の風景')"><img src="image/35.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/36.JPG','境内の風景')"><img src="image/36.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/37.JPG','境内の風景')"><img src="image/37.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/39.JPG','境内の風景')"><img src="image/39.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/40.JPG','境内の風景')"><img src="image/40.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/41.JPG','境内の風景')"><img src="image/41.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/42.JPG','境内の風景')"><img src="image/42.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/43.JPG','境内の風景')"><img src="image/43.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/44.JPG','境内の風景')"><img src="image/44.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/45.JPG','境内の風景')"><img src="image/45.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/48.JPG','境内の風景')"><img src="image/48.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/49.JPG','境内の風景')"><img src="image/49.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/51.JPG','境内の風景')"><img src="image/51.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/53.JPG','境内の風景')"><img src="image/53.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/54.JPG','境内の風景')"><img src="image/54.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/56.JPG','境内の風景')"><img src="image/56.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/57.JPG','境内の風景')"><img src="image/57.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/58.JPG','境内の風景')"><img src="image/58.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/59.JPG','境内の風景')"><img src="image/59.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/60.JPG','境内の風景')"><img src="image/60.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/61.JPG','境内の風景')"><img src="image/61.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/63.JPG','境内の風景')"><img src="image/63.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/64.JPG','境内の風景')"><img src="image/64.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/65.JPG','境内の風景')"><img src="image/65.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/67.JPG','境内の風景')"><img src="image/67.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/68.JPG','境内の風景')"><img src="image/68.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/69.JPG','境内の風景')"><img src="image/69.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/70.JPG','境内の風景')"><img src="image/70.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/71.JPG','境内の風景')"><img src="image/71.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/72.JPG','境内の風景')"><img src="image/72.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/73.JPG','境内の風景')"><img src="image/73.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/74.JPG','境内の風景')"><img src="image/74.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/76.JPG','境内の風景')"><img src="image/76.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/77.JPG','境内の風景')"><img src="image/77.JPG" alt="境内の風景"><div class="masonry-label">境内の風景</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/ojigi.jpeg','お辞儀')"><img src="image/ojigi.jpeg" alt="お辞儀"><div class="masonry-label">お辞儀</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tahoutou.jpeg','多宝塔')"><img src="image/tahoutou.jpeg" alt="多宝塔"><div class="masonry-label">多宝塔</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file001.jpeg','太龍寺')"><img src="image/tairyu-ji-file001.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file002.jpeg','太龍寺')"><img src="image/tairyu-ji-file002.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file003.jpeg','太龍寺')"><img src="image/tairyu-ji-file003.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file004.jpeg','太龍寺')"><img src="image/tairyu-ji-file004.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file005.jpeg','太龍寺')"><img src="image/tairyu-ji-file005.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
-      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file006.jpeg','太龍寺')"><img src="image/tairyu-ji-file006.jpeg" alt="太龍寺"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/2.JPG','境内の風景')"><img src="image/2.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/3.JPG','境内の風景')"><img src="image/3.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/4.JPG','境内の風景')"><img src="image/4.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/5.JPG','境内の風景')"><img src="image/5.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/6.JPG','境内の風景')"><img src="image/6.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/13.JPG','境内の風景')"><img src="image/13.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/14.jpg','境内の風景')"><img src="image/14.jpg" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/17.JPG','境内の風景')"><img src="image/17.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/21.JPG','境内の風景')"><img src="image/21.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/23.JPG','境内の風景')"><img src="image/23.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/25.JPG','境内の風景')"><img src="image/25.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/30.JPG','境内の風景')"><img src="image/30.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/31.JPG','境内の風景')"><img src="image/31.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/32.jpg','境内の風景')"><img src="image/32.jpg" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/33.jpg','境内の風景')"><img src="image/33.jpg" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/35.JPG','境内の風景')"><img src="image/35.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/36.JPG','境内の風景')"><img src="image/36.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/37.JPG','境内の風景')"><img src="image/37.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/39.JPG','境内の風景')"><img src="image/39.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/40.JPG','境内の風景')"><img src="image/40.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/41.JPG','境内の風景')"><img src="image/41.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/42.JPG','境内の風景')"><img src="image/42.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/43.JPG','境内の風景')"><img src="image/43.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/44.JPG','境内の風景')"><img src="image/44.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/45.JPG','境内の風景')"><img src="image/45.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/48.JPG','境内の風景')"><img src="image/48.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/49.JPG','境内の風景')"><img src="image/49.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/51.JPG','境内の風景')"><img src="image/51.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/53.JPG','境内の風景')"><img src="image/53.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/54.JPG','境内の風景')"><img src="image/54.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/56.JPG','境内の風景')"><img src="image/56.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/57.JPG','境内の風景')"><img src="image/57.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/58.JPG','境内の風景')"><img src="image/58.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/59.JPG','境内の風景')"><img src="image/59.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/60.JPG','境内の風景')"><img src="image/60.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/61.JPG','境内の風景')"><img src="image/61.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/63.JPG','境内の風景')"><img src="image/63.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/64.JPG','境内の風景')"><img src="image/64.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/65.JPG','境内の風景')"><img src="image/65.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/67.JPG','境内の風景')"><img src="image/67.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/68.JPG','境内の風景')"><img src="image/68.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/69.JPG','境内の風景')"><img src="image/69.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/70.JPG','境内の風景')"><img src="image/70.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/71.JPG','境内の風景')"><img src="image/71.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/72.JPG','境内の風景')"><img src="image/72.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/73.JPG','境内の風景')"><img src="image/73.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/74.JPG','境内の風景')"><img src="image/74.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/76.JPG','境内の風景')"><img src="image/76.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/77.JPG','境内の風景')"><img src="image/77.JPG" alt="境内の風景" loading="lazy"><div class="masonry-label">境内の風景</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/ojigi.jpeg','お辞儀')"><img src="image/ojigi.jpeg" alt="お辞儀" loading="lazy"><div class="masonry-label">お辞儀</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tahoutou.jpeg','多宝塔')"><img src="image/tahoutou.jpeg" alt="多宝塔" loading="lazy"><div class="masonry-label">多宝塔</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file001.jpeg','太龍寺')"><img src="image/tairyu-ji-file001.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file002.jpeg','太龍寺')"><img src="image/tairyu-ji-file002.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file003.jpeg','太龍寺')"><img src="image/tairyu-ji-file003.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file004.jpeg','太龍寺')"><img src="image/tairyu-ji-file004.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file005.jpeg','太龍寺')"><img src="image/tairyu-ji-file005.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
+      <div class="masonry-item" data-cat="keidai" onclick="openLightbox('image/tairyu-ji-file006.jpeg','太龍寺')"><img src="image/tairyu-ji-file006.jpeg" alt="太龍寺" loading="lazy"><div class="masonry-label">太龍寺</div></div>
       <!-- 既存画像（後半） -->
       <!-- 参道・入口 -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="entrance" onclick="openLightbox('image/entrance001.jpeg','参道入口')">
-        <img src="image/entrance001.jpeg" alt="参道入口">
+        <img src="image/entrance001.jpeg" alt="参道入口" loading="lazy">
         <div class="masonry-label">参道入口</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="entrance" onclick="openLightbox('image/entrance002.jpeg','仁王門への石段')">
-        <img src="image/entrance002.jpeg" alt="仁王門への石段">
+        <img src="image/entrance002.jpeg" alt="仁王門への石段" loading="lazy">
         <div class="masonry-label">仁王門への石段</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="entrance" onclick="openLightbox('image/entrance003.jpeg','四国霊場第二十一番 石柱')">
-        <img src="image/entrance003.jpeg" alt="四国霊場第二十一番 石柱">
+        <img src="image/entrance003.jpeg" alt="四国霊場第二十一番 石柱" loading="lazy">
         <div class="masonry-label">四国霊場第二十一番 石柱</div>
       </div>
       <!-- 本堂 -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="hondou" onclick="openLightbox('image/hondou001.jpeg','本堂 正面')">
-        <img src="image/hondou001.jpeg" alt="本堂 正面">
+        <img src="image/hondou001.jpeg" alt="本堂 正面" loading="lazy">
         <div class="masonry-label">本堂 正面</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="hondou" onclick="openLightbox('image/hondou002.jpeg','本堂（虚空蔵菩薩）')">
-        <img src="image/hondou002.jpeg" alt="本堂（虚空蔵菩薩）">
+        <img src="image/hondou002.jpeg" alt="本堂（虚空蔵菩薩）" loading="lazy">
         <div class="masonry-label">本堂（虚空蔵菩薩）</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="hondou" onclick="openLightbox('image/hondou003.jpeg','本堂 細部')">
-        <img src="image/hondou003.jpeg" alt="本堂 細部">
+        <img src="image/hondou003.jpeg" alt="本堂 細部" loading="lazy">
         <div class="masonry-label">本堂 細部</div>
       </div>
       <!-- 境内 -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="keidai" onclick="openLightbox('image/keidai001.jpeg','境内の杉木立')">
-        <img src="image/keidai001.jpeg" alt="境内の杉木立">
+        <img src="image/keidai001.jpeg" alt="境内の杉木立" loading="lazy">
         <div class="masonry-label">境内の杉木立</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="keidai" onclick="openLightbox('image/keidai002.jpeg','境内の風景')">
-        <img src="image/keidai002.jpeg" alt="境内の風景">
+        <img src="image/keidai002.jpeg" alt="境内の風景" loading="lazy">
         <div class="masonry-label">境内の風景</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="keidai" onclick="openLightbox('image/keidai003.jpeg','境内の緑')">
-        <img src="image/keidai003.jpeg" alt="境内の緑">
+        <img src="image/keidai003.jpeg" alt="境内の緑" loading="lazy">
         <div class="masonry-label">境内の緑</div>
       </div>
       <div class="masonry-item reveal reveal-delay-1" data-cat="keidai" onclick="openLightbox('image/keidai004.jpeg','舎心ヶ嶽 道標')">
-        <img src="image/keidai004.jpeg" alt="舎心ヶ嶽 道標">
+        <img src="image/keidai004.jpeg" alt="舎心ヶ嶽 道標" loading="lazy">
         <div class="masonry-label">舎心ヶ嶽 道標</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="keidai" onclick="openLightbox('image/keidai005.jpeg','太龍寺本堂 道標')">
-        <img src="image/keidai005.jpeg" alt="太龍寺本堂 道標">
+        <img src="image/keidai005.jpeg" alt="太龍寺本堂 道標" loading="lazy">
         <div class="masonry-label">太龍寺本堂 道標</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="keidai" onclick="openLightbox('image/keidai006.jpeg','ロープウェイ山頂駅')">
-        <img src="image/keidai006.jpeg" alt="ロープウェイ山頂駅">
+        <img src="image/keidai006.jpeg" alt="ロープウェイ山頂駅" loading="lazy">
         <div class="masonry-label">ロープウェイ山頂駅</div>
       </div>
       <!-- 堂宇 -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="gosatu" onclick="openLightbox('image/gosatu-do001.jpeg','護摩堂（不動明王）')">
-        <img src="image/gosatu-do001.jpeg" alt="護摩堂（不動明王）">
+        <img src="image/gosatu-do001.jpeg" alt="護摩堂（不動明王）" loading="lazy">
         <div class="masonry-label">護摩堂（不動明王）</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="gosatu" onclick="openLightbox('image/gosatu-do002.jpeg','大師堂')">
-        <img src="image/gosatu-do002.jpeg" alt="大師堂">
+        <img src="image/gosatu-do002.jpeg" alt="大師堂" loading="lazy">
         <div class="masonry-label">大師堂</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="gosatu" onclick="openLightbox('image/gosatu-do003.jpeg','多宝塔')">
-        <img src="image/gosatu-do003.jpeg" alt="多宝塔">
+        <img src="image/gosatu-do003.jpeg" alt="多宝塔" loading="lazy">
         <div class="masonry-label">多宝塔</div>
       </div>
       <div class="masonry-item reveal reveal-delay-1" data-cat="gosatu" onclick="openLightbox('image/gosatu-do004.jpeg','仁王門（仁王像）')">
-        <img src="image/gosatu-do004.jpeg" alt="仁王門（仁王像）">
+        <img src="image/gosatu-do004.jpeg" alt="仁王門（仁王像）" loading="lazy">
         <div class="masonry-label">仁王門（仁王像）</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="gosatu" onclick="openLightbox('image/gosatu-do005.jpeg','石段と緑')">
-        <img src="image/gosatu-do005.jpeg" alt="石段と緑">
+        <img src="image/gosatu-do005.jpeg" alt="石段と緑" loading="lazy">
         <div class="masonry-label">石段と緑</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="gosatu" onclick="openLightbox('image/gosatu-do006.jpeg','求聞持堂')">
-        <img src="image/gosatu-do006.jpeg" alt="求聞持堂">
+        <img src="image/gosatu-do006.jpeg" alt="求聞持堂" loading="lazy">
         <div class="masonry-label">求聞持堂</div>
       </div>
       <!-- 内観 -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="interior" onclick="openLightbox('image/ryu-ten-i001.jpeg','龍天井（持仏堂）')">
-        <img src="image/ryu-ten-i001.jpeg" alt="龍天井（持仏堂）">
+        <img src="image/ryu-ten-i001.jpeg" alt="龍天井（持仏堂）" loading="lazy">
         <div class="masonry-label">龍天井（持仏堂）</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="interior" onclick="openLightbox('image/ryu-ten-i002.jpeg','寺内の佇まい')">
-        <img src="image/ryu-ten-i002.jpeg" alt="寺内の佇まい">
+        <img src="image/ryu-ten-i002.jpeg" alt="寺内の佇まい" loading="lazy">
         <div class="masonry-label">寺内の佇まい</div>
       </div>
       <div class="masonry-item reveal reveal-delay-3" data-cat="interior" onclick="openLightbox('image/ryu-ten-i003.jpeg','天井の龍絵')">
-        <img src="image/ryu-ten-i003.jpeg" alt="天井の龍絵">
+        <img src="image/ryu-ten-i003.jpeg" alt="天井の龍絵" loading="lazy">
         <div class="masonry-label">天井の龍絵</div>
       </div>
       <div class="masonry-item reveal reveal-delay-1" data-cat="interior" onclick="openLightbox('image/noukeijyo001.jpeg','納経所')">
-        <img src="image/noukeijyo001.jpeg" alt="納経所">
+        <img src="image/noukeijyo001.jpeg" alt="納経所" loading="lazy">
         <div class="masonry-label">納経所</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="interior" onclick="openLightbox('image/noukeijyo002.jpeg','境内奥の風景')">
-        <img src="image/noukeijyo002.jpeg" alt="境内奥の風景">
+        <img src="image/noukeijyo002.jpeg" alt="境内奥の風景" loading="lazy">
         <div class="masonry-label">境内奥の風景</div>
       </div>
       <!-- taishi-do -->
       <div class="masonry-item reveal reveal-delay-1" data-cat="gosatu" onclick="openLightbox('image/taishi-do001.jpeg','大師堂 正面')">
-        <img src="image/taishi-do001.jpeg" alt="大師堂 正面">
+        <img src="image/taishi-do001.jpeg" alt="大師堂 正面" loading="lazy">
         <div class="masonry-label">大師堂 正面</div>
       </div>
       <div class="masonry-item reveal reveal-delay-2" data-cat="gosatu" onclick="openLightbox('image/taishi-do002.jpeg','舎心ヶ嶽への道')">
-        <img src="image/taishi-do002.jpeg" alt="舎心ヶ嶽への道">
+        <img src="image/taishi-do002.jpeg" alt="舎心ヶ嶽への道" loading="lazy">
         <div class="masonry-label">舎心ヶ嶽への道</div>
       </div>
     </div>
@@ -1516,13 +1516,13 @@
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img id="lightbox-img" src="" alt="">
+    <img id="lightbox-img" src="" alt="" loading="lazy">
     <p class="lightbox-caption" id="lightbox-caption"></p>
   </div>
 
   <!-- PHOTO BANNER 2 -->
   <div class="photo-banner">
-    <img src="image/noukeijyo002.jpeg" alt="境内風景">
+    <img src="image/noukeijyo002.jpeg" alt="境内風景" loading="lazy">
     <div class="photo-banner-overlay">
       <p class="photo-banner-text reveal">西の高野 ― 大師の足跡を辿る旅へ</p>
     </div>
@@ -1554,19 +1554,19 @@
           </tr>
           <tr>
             <th>所在地</th>
-            <td>徳島県那賀郡那賀町鷲敷字太龍寺</td>
+            <td>〒771－5173　徳島県阿南市加茂町龍山２</td>
           </tr>
           <tr>
             <th>電話番号</th>
             <td>0884-62-2021</td>
           </tr>
           <tr>
-            <th>ロープウェイ</th>
-            <td>鷲の里駅より約10分<br>（新四国曼荼羅霊場 鷲の里）</td>
+            <th>太龍寺ロープウェイ</th>
+            <td>山麓駅より約10分（道の駅　鷲の里内）</td>
           </tr>
           <tr>
             <th>駐車場</th>
-            <td>ロープウェイ山麓駅に無料駐車場あり</td>
+            <td>太龍寺ロープウェイ山麓駅（道の駅　鷲の里）に無料駐車場あり<br>※カーナビ入力は、0884－62－3100（太龍寺ロープウェイ）を入力して下さい。</td>
           </tr>
           <tr>
             <th>宗派</th>
@@ -1592,14 +1592,13 @@
         </div>
         <p style="margin-top:16px; font-size:0.8rem; color:var(--color-text-light); line-height:1.8;">
           ※ ロープウェイをご利用の場合は、那賀川沿いの県道19号線を南下し、<br>
-          鷲の里ロープウェイ山麓駅をお目指しください。<br>
-          徒歩での登拝は約2〜3時間かかります（健脚の方向け）。
+          鷲の里ロープウェイ山麓駅をお目指しください。
         </p>
       </div>
     </div>
   </section>
 
-  <script>
+  <script defer>
     /* ===== HAMBURGER MENU ===== */
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobile-nav');
@@ -1645,7 +1644,7 @@
     }
 
     function startTimer() {
-      timer = setInterval(nextSlide, 4000);
+      timer = setInterval(nextSlide, 5500);
     }
 
     startTimer();
@@ -1798,7 +1797,7 @@
 
       function resetAuto() {
         clearInterval(autoTimer);
-        autoTimer = setInterval(() => galGo(cur + 1), 3500);
+        autoTimer = setInterval(() => galGo(cur + 1), 5000);
       }
       resetAuto();
 
